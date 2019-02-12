@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MapViewController.swift
 //  Kanto
 //
 //  Created by Anastasia Veremiichyk on 2/12/19.
@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
-class FirstViewController: UIViewController {
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
+}
 
+/// MARK: Mapkit Delegate Methods
 
+extension MapViewController: MKMapViewDelegate {
+    
 }
 
