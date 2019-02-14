@@ -9,7 +9,11 @@
 import UIKit
 
 class PlacesListViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var places: [String] = ["Ohio", "New Orleans", "Chernivtsi", "Kyiv", "42"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,11 +29,13 @@ extension PlacesListViewController: UITableViewDelegate {
 /// MARK: Tableview Datasource Methods
 extension PlacesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell") as! PlaceTableViewCell
+        cell.configure(place: places[indexPath.row])
+        return cell
     }
     
     
