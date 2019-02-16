@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601542A922187D6600F02793 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601542A822187D6600F02793 /* PlaceModel.swift */; };
 		6067E40C22136C2300561EB0 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6067E40B22136C2300561EB0 /* PlaceTableViewCell.swift */; };
+		60BB5B002218974F0077B8B7 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BB5AFF2218974F0077B8B7 /* ViewControllerExtension.swift */; };
 		60EC730B221230EF006BC97B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EC730A221230EF006BC97B /* AppDelegate.swift */; };
 		60EC730D221230EF006BC97B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EC730C221230EF006BC97B /* MapViewController.swift */; };
 		60EC730F221230EF006BC97B /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EC730E221230EF006BC97B /* PlacesListViewController.swift */; };
@@ -16,7 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601542A822187D6600F02793 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		6067E40B22136C2300561EB0 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		60BB5AFF2218974F0077B8B7 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		60EC7307221230EF006BC97B /* Kanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60EC730A221230EF006BC97B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60EC730C221230EF006BC97B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 				6067E40B22136C2300561EB0 /* PlaceTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		60BB5AFE2218973A0077B8B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				60BB5AFF2218974F0077B8B7 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		60EC72FE221230EF006BC97B = {
@@ -104,6 +116,7 @@
 		60EC7321221231BE006BC97B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				601542A822187D6600F02793 /* PlaceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 		60EC732222123287006BC97B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				60BB5AFE2218973A0077B8B7 /* Extensions */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -196,6 +210,8 @@
 			files = (
 				60EC730F221230EF006BC97B /* PlacesListViewController.swift in Sources */,
 				60EC730B221230EF006BC97B /* AppDelegate.swift in Sources */,
+				60BB5B002218974F0077B8B7 /* ViewControllerExtension.swift in Sources */,
+				601542A922187D6600F02793 /* PlaceModel.swift in Sources */,
 				60EC730D221230EF006BC97B /* MapViewController.swift in Sources */,
 				6067E40C22136C2300561EB0 /* PlaceTableViewCell.swift in Sources */,
 			);

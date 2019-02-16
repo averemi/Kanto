@@ -20,8 +20,8 @@ class PlaceTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(place: String) {
-        placeLabel.text = place
+    func configure(place: Place) {
+        placeLabel.text = place.title
     }
 
 }

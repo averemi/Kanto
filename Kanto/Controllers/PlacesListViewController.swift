@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PlacesListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var places: [String] = ["Ohio", "New Orleans", "Chernivtsi", "Kyiv", "42"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,13 @@ class PlacesListViewController: UIViewController {
 
 /// MARK: Tableview Delegate Methods
 extension PlacesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = self.tabBarController?.viewControllers![0] as! MapViewController
+        vc.showSelectedLocation(location: places[indexPath.row].coordinate)
+        self.tabBarController!.selectedIndex = 0
+        
+    }
 }
 
 
