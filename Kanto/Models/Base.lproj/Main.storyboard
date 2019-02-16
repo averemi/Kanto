@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,22 +15,50 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="Kanto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YgH-QU-LcT">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgH-QU-LcT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <connections>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="UJ3-Po-j1Y"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I79-Aa-XRx" userLabel="Map Mode Control">
+                                <rect key="frame" x="50" y="560" width="275" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="9pv-A4-QxB" eventType="valueChanged" id="Td0-uC-0Yr"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md0-OS-y4C" userLabel="Location Button">
+                                <rect key="frame" x="335" y="561" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="jVr-T7-Seh"/>
+                                    <constraint firstAttribute="width" secondItem="Md0-OS-y4C" secondAttribute="height" multiplier="1:1" id="z2V-zz-O1j"/>
+                                </constraints>
+                                <state key="normal" image="location-icon"/>
+                                <connections>
+                                    <action selector="locateUser:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eh9-f0-SeY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="I79-Aa-XRx" secondAttribute="bottom" constant="30" id="Dwa-pK-69k"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="YgH-QU-LcT" secondAttribute="trailing" id="GVO-ja-gXp"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="I79-Aa-XRx" secondAttribute="trailing" constant="50" id="Ixo-0j-FFR"/>
+                            <constraint firstItem="Md0-OS-y4C" firstAttribute="bottom" secondItem="I79-Aa-XRx" secondAttribute="bottom" id="Lzq-Zj-lMg"/>
                             <constraint firstItem="YgH-QU-LcT" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="PFX-Oh-3Cj"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="YgH-QU-LcT" secondAttribute="bottom" id="Y8i-ZA-bvJ"/>
                             <constraint firstItem="YgH-QU-LcT" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="ZWd-3K-Yqr"/>
+                            <constraint firstItem="Md0-OS-y4C" firstAttribute="leading" secondItem="I79-Aa-XRx" secondAttribute="trailing" constant="10" id="gOs-y0-msh"/>
+                            <constraint firstItem="I79-Aa-XRx" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="50" id="pNa-le-tUr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -48,22 +76,22 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="PlacesListViewController" customModule="Kanto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMk-HU-l9o" userLabel="Places Table View">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeCell" id="5Oc-Ae-X1v" userLabel="Place Table View Cell" customClass="PlaceTableViewCell" customModule="Kanto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Oc-Ae-X1v" id="oGp-Sa-HOL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-YR-ogO" userLabel="Place Title Label">
-                                                    <rect key="frame" x="15" y="11" width="290" height="22"/>
+                                                    <rect key="frame" x="15" y="11" width="384" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -126,6 +154,7 @@
     </scenes>
     <resources>
         <image name="list-icon" width="30" height="30"/>
+        <image name="location-icon" width="512" height="512"/>
         <image name="map-icon" width="30" height="30"/>
     </resources>
 </document>
